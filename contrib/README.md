@@ -669,3 +669,14 @@ that have no common unit — the cheaper-looking option wins by accident of magn
 Replace the `reduce` in `selectRequirements` (src/x402-guards.ts:142-144) with
 `selectWithAssetPreference` when candidates span multiple assets, or add an optional
 `preferredAssets` field to `X402PayOptions`.
+
+---
+
+## 19. MCP Payer Protocol and Spend Hardening (#610, #612, #613, #614)
+
+[contrib/mcp-payer-hardening](mcp-payer-hardening/README.md) adds four executable
+contracts: a resource-specific spend tracker with a distinct refusal, a clearly
+labelled quote-only pay-and-call path, no-op-by-default OpenTelemetry-compatible
+quote/sign/submit spans, and a hermetic official MCP client handshake over real
+stdio transport. Focused unit tests and an opt-in protocol integration suite
+cover the complete contribution.
