@@ -686,11 +686,15 @@ Replace the `reduce` in `selectRequirements` (src/x402-guards.ts:142-144) with
 
 ---
 
-## 19. MCP Payer Protocol and Spend Hardening (#610, #612, #613, #614)
+## 19. Workspace Release Safety Proposals (#623, #624, #625, #628)
 
-[contrib/mcp-payer-hardening](mcp-payer-hardening/README.md) adds four executable
-contracts: a resource-specific spend tracker with a distinct refusal, a clearly
-labelled quote-only pay-and-call path, no-op-by-default OpenTelemetry-compatible
-quote/sign/submit spans, and a hermetic official MCP client handshake over real
-stdio transport. Focused unit tests and an opt-in protocol integration suite
-cover the complete contribution.
+The executable proposal in
+[contrib/workspace-release-safety/](workspace-release-safety/README.md) covers:
+
+- dependency-range compatibility and stale-minimum detection across workspaces;
+- a Changesets adoption plan that preserves the detailed root changelog;
+- isolated tarball installation and smoke checks for the CLI and MCP payer;
+- README installation-name checks against each package manifest.
+
+All implementation targets outside `contrib/` are documented as maintainer
+integration steps and are intentionally unchanged.
